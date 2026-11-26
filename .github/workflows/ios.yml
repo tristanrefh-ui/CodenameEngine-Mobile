@@ -29,6 +29,7 @@ jobs:
       - name: Installing/Updating libraries
         run: |
           haxe -cp commandline -D analyzer-optimize --run Main setup -s
+          haxelib install lime
       - name: Building the game
         run: haxelib run lime build ios -eval -nosign -final
       - name: Clearing already existing cache
