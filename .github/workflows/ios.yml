@@ -28,9 +28,10 @@ jobs:
           echo "HXCPP_COMPILE_CACHE=~/.hxcpp" >> $GITHUB_ENV
       - name: Installing/Updating libraries
         run: |
+         haxelib newrepo
           haxe -cp commandline -D analyzer-optimize --run Main setup -s
-          haxelib install lime
-          haxelib install hxvlc --always
+          haxelib git lime https://github.com
+          haxelib git hxvlc https://github.com
           haxelib install format
           haxelib install hxp
       - name: Building the game
