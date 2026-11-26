@@ -30,8 +30,9 @@ jobs:
         run: |
           haxe -cp commandline -D analyzer-optimize --run Main setup -s
           haxelib install lime
+          haxelib install hxvlc --always
       - name: Building the game
-        run: haxelib run lime build ios
+        run: haxelib run lime build ios -eval -nosign -final
       - name: Clearing already existing cache
         uses: actions/github-script@v6
         with:
