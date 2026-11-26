@@ -32,6 +32,7 @@ jobs:
           haxelib install lime
           haxelib install hxvlc --always
           haxelib install format
+          haxelib install hxp
       - name: Building the game
         run: haxelib run lime build ios -eval -nosign -final
       - name: Clearing already existing cache
